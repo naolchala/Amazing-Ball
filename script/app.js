@@ -6,6 +6,14 @@ window.addEventListener("keyup", (e) => {
     }
 });
 
+canvas.addEventListener("click", (e) => {
+    if (e.x < window.innerWidth / 2) {
+        ball.jump("left");
+    } else {
+        ball.jump("right");
+    }
+});
+
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ball.update();

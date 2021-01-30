@@ -13,8 +13,12 @@ let score = 0;
 let space = 200;
 
 window.addEventListener("resize", (e) => {
-    canvas.width = 400;
     canvas.height = window.innerHeight;
+
+    canvas.width = 400;
+    if (window.innerWidth < 480) {
+        canvas.width = window.innerWidth;
+    }
 });
 
 const colors = [
