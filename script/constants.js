@@ -1,6 +1,8 @@
 const gameoverPanel = document.querySelector("#gameover");
 const startupPanel = document.querySelector("#startup");
 const scoreCounter = document.querySelector("#scoreCounter");
+const leaderBoardPanel = document.querySelector("#leaderboards");
+const leaderBoardList = document.querySelector(".list");
 const canvas = document.querySelector("#game");
 const ctx = canvas.getContext("2d");
 
@@ -31,6 +33,7 @@ const colors = [
     "#4caf50",
     "#3f51b5",
     "#1ed8c7",
+    "#ff5722",
 ];
 
 function randInt(min, max) {

@@ -1,4 +1,5 @@
 * {
+    box-sizing: border-box;
     font-family: "poppins", "sans serif";
 }
 body {
@@ -17,7 +18,8 @@ body {
     box-shadow: 0 0 15px 1px #0005;
 }
 #startup,
-#gameover {
+#gameover,
+#leaderboards {
     text-align: center;
     z-index: 10;
     width: 400px;
@@ -38,7 +40,7 @@ body {
 }
 #startup button,
 #gameover button {
-    margin-top: 100px;
+    margin-top: 70px;
     padding: 10px 50px;
     font-weight: bold;
     border: 3px solid white;
@@ -64,7 +66,8 @@ body {
     font-size: 5em;
 }
 
-#gameover {
+#gameover,
+#leaderboards {
     transform: translate(-50%, 0) scale(3);
     opacity: 0;
     display: none;
@@ -102,4 +105,65 @@ body {
     #gameover {
         width: 100% !important;
     }
+}
+
+#startup .secondary,
+#gameover .secondary {
+    padding: 6px 25px;
+    margin-top: 20px;
+}
+
+#startup .secondary:hover,
+#gameover .secondary:hover {
+    padding: 6px 50px;
+}
+#leaderboards .list {
+    padding: 8px;
+}
+#leaderboards .list .list-item {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#leaderboards .list .list-item:hover {
+    background-color: #555;
+}
+
+#leaderboards .list .list-item .rank {
+    font-size: large;
+}
+
+#leaderboards .list .list-item .name {
+    flex: 1;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.close-btn span {
+    display: block;
+    background-color: white;
+    width: 30px;
+    height: 3px;
+    transform-origin: center;
+    transition: all 300ms ease;
+}
+
+.close-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+.close-btn span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+.close-btn:hover span {
+    transform: rotate(0deg) translate(0, 0);
 }

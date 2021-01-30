@@ -14,7 +14,10 @@
     <body>
         <div id="startup">
             <h1>Amazing Ball</h1>
-            <button onclick="start()">Start</button>
+            <button onclick="start()">Start</button><br />
+            <button onclick="leaderBoards()" class="secondary">
+                Leaderboards
+            </button>
             <div class="tip">
                 <span>
                     <kbd>Left Arrow</kbd> / <kbd>A</kbd> to move to Left
@@ -28,7 +31,10 @@
         <canvas id="game"></canvas>
         <div id="gameover">
             <h1 id="scorePreview">0</h1>
-            <button onclick="restart()">Restart</button>
+            <button onclick="restart()">Restart</button><br />
+            <button onclick="leaderBoards()" class="secondary">
+                Leaderboards
+            </button>
             <div class="tip">
                 <span>
                     <kbd>Left Arrow</kbd> / <kbd>A</kbd> to move to Left
@@ -38,7 +44,22 @@
                 </span>
             </div>
         </div>
+        <div id="leaderboards">
+            <div style="position: relative">
+                <button onclick="closeLeaderBoards()" class="close-btn">
+                    <span></span>
+                    <span></span>
+                </button>
+                <h1>Leaderboards</h1>
+                <div class="list"></div>
+            </div>
+        </div>
     </body>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"
+    ></script>
     <script src="script/constants.js"></script>
     <script src="script/ball.js"></script>
     <script src="script/obstacles.js"></script>

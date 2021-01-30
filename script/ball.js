@@ -4,7 +4,7 @@ class Ball {
         this.x = canvas.width / 2 - this.rad / 2;
         this.y = canvas.height - 100 - this.rad;
 
-        this.color = "#ff5722";
+        this.color = randColor();
         this.vy = 1;
         this.vx = 0;
     }

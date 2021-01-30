@@ -39,6 +39,22 @@ function gameover() {
     setTimeout(() => {
         gameoverPanel.style.opacity = "1";
         gameoverPanel.style.transform = "translate(-50%, 0) scale(1)";
+        scoreCounter.style.transform = "scale(0)";
+        let name = localStorage.getItem("name");
+        if (!name) {
+            name = prompt("Enter your name to save your score");
+        }
+
+        if (name) {
+            axios
+                .post("https://naolsamazing.glitch.me", {
+                    name: name,
+                    score: score,
+                })
+                .then(() => {
+                    localStorage.setItem("name", name);
+                });
+        }
     }, 100);
 
     document.querySelector("#gameover h1").textContent = score;
@@ -57,4 +73,32 @@ function restart() {
     speed = 3;
     updateScore();
     animate();
+}
+
+function leaderBoards() {
+    leaderBoardPanel.style.display = "block";
+    setTimeout(() => {
+        leaderBoardPanel.style.opacity = "1";
+        leaderBoardPanel.style.transform = "translate(-50%, 0) scale(1)";
+    }, 100);
+
+    axios.get("https://naolsamazing.glitch.me").then((res) => {
+        if (res.data.length > 0) {
+            leaderBoardList.innerHTML = "";
+            res.data.forEach((person, index) => {
+                leaderBoardList.innerHTML += `<div class="list-item">
+                <span class="rank">${index + 1}</span>
+                <span class="name">${person.name}</span>
+                <span class="score">${person.score}</span>
+                </div>`;
+            });
+        }
+    });
+}
+
+function closeLeaderBoards() {
+    leaderBoardPanel.style.opacity = "0";
+    leaderBoardPanel.style.transform = "translate(-50%, 0) scale(3)";
+
+    setTimeout(() => (leaderBoardPanel.style.display = "none"), 500);
 }
