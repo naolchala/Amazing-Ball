@@ -1,7 +1,7 @@
 window.addEventListener("keyup", (e) => {
-    if (e.code === "Slash" || e.code === "ArrowRight") {
+    if (e.code === "KeyL" || e.code === "ArrowRight") {
         ball.jump("right");
-    } else if (e.code === "KeyZ" || e.code === "ArrowLeft") {
+    } else if (e.code === "KeyA" || e.code === "ArrowLeft") {
         ball.jump("left");
     }
 });

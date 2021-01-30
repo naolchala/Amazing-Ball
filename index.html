@@ -91,18 +91,51 @@
                 font-size: 2em;
                 transition: all 300ms ease;
             }
+            .tip {
+                margin-top: 80px;
+                font-size: small;
+            }
+            .tip span {
+                text-align: center;
+                display: block;
+                margin-top: 5px;
+            }
+
+            .tip span kbd {
+                background: #222222;
+                display: inline-block;
+                padding: 3px 10px;
+                border-radius: 5px;
+                border-bottom: 2px solid #333333;
+            }
         </style>
     </head>
     <body>
         <div id="startup">
             <h1>Amazing Ball</h1>
             <button onclick="start()">Start</button>
+            <div class="tip">
+                <span>
+                    <kbd>Left Arrow</kbd> / <kbd>A</kbd> to move to Left
+                </span>
+                <span>
+                    <kbd>Right Arrow</kbd> / <kbd>L</kbd> to move to Right
+                </span>
+            </div>
         </div>
         <span id="scoreCounter">0</span>
         <canvas id="game"></canvas>
         <div id="gameover">
             <h1 id="scorePreview">0</h1>
             <button onclick="restart()">Restart</button>
+            <div class="tip">
+                <span>
+                    <kbd>Left Arrow</kbd> / <kbd>A</kbd> to move to Left
+                </span>
+                <span>
+                    <kbd>Right Arrow</kbd> / <kbd>L</kbd> to move to Right
+                </span>
+            </div>
         </div>
     </body>
     <script src="script/constants.js"></script>
