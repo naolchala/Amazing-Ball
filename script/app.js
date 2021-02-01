@@ -63,7 +63,7 @@ function gameover() {
 function restart() {
     gameoverPanel.style.opacity = "0";
     gameoverPanel.style.transform = "translate(-50%, 0) scale(3)";
-
+    scoreCounter.style.transform = "scale(1)";
     setTimeout(() => (gameoverPanel.style.display = "none"), 500);
 
     ball = new Ball();
