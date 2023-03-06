@@ -40,21 +40,21 @@ function gameover() {
         gameoverPanel.style.opacity = "1";
         gameoverPanel.style.transform = "translate(-50%, 0) scale(1)";
         scoreCounter.style.transform = "scale(0)";
-        let name = localStorage.getItem("name");
-        if (!name) {
-            name = prompt("Enter your name to save your score");
-        }
+//         let name = localStorage.getItem("name");
+//         if (!name) {
+//             name = prompt("Enter your name to save your score");
+//         }
 
-        if (name) {
-            axios
-                .post("https://naolsamazing.glitch.me", {
-                    name: name,
-                    score: score,
-                })
-                .then(() => {
-                    localStorage.setItem("name", name);
-                });
-        }
+//         if (name) {
+//             axios
+//                 .post("https://naolsamazing.glitch.me", {
+//                     name: name,
+//                     score: score,
+//                 })
+//                 .then(() => {
+//                     localStorage.setItem("name", name);
+//                 });
+//         }
     }, 100);
 
     document.querySelector("#gameover h1").textContent = score;
